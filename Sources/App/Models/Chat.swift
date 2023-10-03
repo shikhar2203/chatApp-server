@@ -19,6 +19,9 @@ final class Chat: Model, Content {
     @Field(key: "body")
     var body: String
     
+    @Parent(key: "user_id") // FK
+    var user: User
+    
     init() {}
     
     init(id: UUID? = nil, body: String) {

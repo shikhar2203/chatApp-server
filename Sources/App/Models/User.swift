@@ -28,6 +28,9 @@ final class User: Model, Content {
     @Field(key: "password")
     var password: String
     
+    @Children(for: \.$user)
+    var chats: [Chat]
+    
     init(){}
     
     init(id: UUID? = nil, username: String, fullname: String, email: String, password: String) {
